@@ -1,12 +1,24 @@
 <html>
 <head>
 	<title>This is Pizaa App</title>
+
+	<link rel="stylesheet" type="text/css" href="app.css">
 	<script type="text/javascript" src="./angular.min.js"></script>
 	<script type="text/javascript" src="./app.js"></script>
+
+
 </head>
 	<body ng-app="pizzaApp">
 		<div ng-controller="PizzaController">
-			{{message}}
+			<div>
+				{{message}}
+				<ul ng-repeat='pizza in PizzaData'>
+					<li>
+						<div>{{ pizza.name }} <div>
+						<div>{{ pizza.prize }}</div>
+ 					</li>
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>
