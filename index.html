@@ -1,24 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="pizzaApp" ng-controller="TitleController">
 <head>
-	<title>This is Pizaa App</title>
+	<title>{{ title }}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="app.css">
 	<script type="text/javascript" src="./angular.min.js"></script>
 	<script type="text/javascript" src="./app.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="./bootstrap.css">
 
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<script type="text/javascript" src="./bootstrap.min.js"></script>
+
+<style type="text/css">
+	.container{
+		height: 100%;
+		width: 100%;
+	}
+
+	.top-navbar{
+		height: 20%;
+		width: 100%;
+	}
+
+	.contents{
+		height: 80%;
+		width: 100%;
+	}
+</style>
 
 </head>
-	<body ng-app="pizzaApp">
-		<div ng-controller="PizzaController">
-			<div>
-				{{message}}
-				<ul ng-repeat='pizza in PizzaData'>
-					<li>
-						<div>{{ pizza.name }} <div>
-						<div>{{ pizza.prize }}</div>
- 					</li>
-				</ul>
+	<body >
+		<div class='container-fluid'>
+			<div class='top-navbar row'>
+				<div class='nav-contents'>
+					Hi
+				</div>
+			</div>
+			<div class='contents row'>
+				<div class='col-md-2'></div>	
+				<div class='col-md-8'>
+					<div ng-controller="PizzaController" class='pizza-container'>
+						<div>
+							<div class="title">{{message}}</div>
+							
+							<ul ng-repeat='pizza in PizzaData'>
+								<li>
+									<div>{{ pizza.name }} <div>
+									<div>{{ pizza.prize }}</div>
+			 					</li>
+							</ul>
+						</div>	
+					</div>
+				</div>	
+				<div class='col-md-2'></div>	
 			</div>
 		</div>
+		
 	</body>
 </html>
