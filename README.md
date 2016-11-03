@@ -1,4 +1,4 @@
-Angular Based Pizza App!
+Angular Based :pizza: App!
 ===================
 
 Demo [here][1]
