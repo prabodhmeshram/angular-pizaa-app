@@ -1,89 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="pizzaApp" ng-controller="TitleController">
+
 <head>
-	<title>{{ title }}</title>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script type="text/javascript" src="./angular.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
+    <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./bootstrap.min.js"></script>
+    <style type="text/css">
+    .container {
+        height: 100%;
+        width: 100%;
+    }
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    .top-navbar {
+        height: 20%;
+        width: 100%;
+    }
 
-	<link rel="stylesheet" type="text/css" href="app.css">
-	<script type="text/javascript" src="./angular.min.js"></script>
-	<script type="text/javascript" src="./app.js"></script>
-	
-	<link rel="stylesheet" type="text/css" href="./bootstrap.css">
+    .contents {
+        height: 80%;
+        width: 100%;
+    }
 
-	<!-- Bootstrap -->
-	<script type="text/javascript" src="./jquery.min.js"></script>
-	<script type="text/javascript" src="./bootstrap.min.js"></script>
+    .float-left {
+        float: left;
+    }
 
-<style type="text/css">
-	.container{
-		height: 100%;
-		width: 100%;
-	}
+    .float-right {
+        float: right;
+    }
 
-	.top-navbar{
-		height: 20%;
-		width: 100%;
-	}
+    .clear {
+        clear: both;
+    }
 
-	.contents{
-		height: 80%;
-		width: 100%;
-	}
+    .pizza-container {
+        width: 100%;
+        border: 1px solid black;
+        text-align: center;
+    }
 
-	.float-left{
-		float: left;
-	}
-
-	.float-right{
-		float: right;
-	}
-
-	.clear{
-		clear: both;
-	}
-
-	.pizza-container{
-		width: 100%;
-		border: 1px solid black;
-		text-align: center;
-	}
-
-	.pizza-container .title,.pizza-container .price{
-		width: 20%;
-	}
-
-</style>
-
+    .pizza-container .title,
+    .pizza-container .price {
+        width: 20%;
+    }
+    </style>
 </head>
-	<body >
-		<div class='container-fluid'>
-			<div class='top-navbar row'>
-				<div class='nav-contents'>
-				</div>
-			</div>
-			<div class='contents row'>
-				<div class='col-md-2'></div>	
-				<div class='col-md-8'>
-					<div ng-controller="PizzaController" class='main-contents'>
-						<div>
-							<!-- <div class="title">{{message}}</div> -->
-							
-							<ul>
-								<li ng-repeat='pizza in PizzaData'>
-									<div class='pizza-container'>
-										<div class="float-left title">{{ pizza.name }} </div>
-										<div class="float-right price">{{ pizza.prize | currency }}</div>
-										<div class="clear"></div>
-									</div>
-			 					</li>
-							</ul>
-						</div>	
-					</div>
-				</div>	
-				<div class='col-md-2'></div>	
-			</div>
-		</div>
-		
-	</body>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Pizza App</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class='container-fluid'>
+        <div class='contents row'>
+            <div class='col-md-2'></div>
+            <div class='col-md-8'>
+                <div ng-controller="PizzaController" class='main-contents'>
+                    <div>
+                        <!-- <div class="title">{{message}}</div> -->
+                        <ul>
+                            <li ng-repeat='pizza in PizzaData'>
+                                <div class='pizza-container'>
+                                    <div class="float-left title">{{ pizza.name }} </div>
+                                    <div class="float-right price">{{ pizza.prize | currency }}</div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-2'></div>
+        </div>
+    </div>
+</body>
+
 </html>
