@@ -30,6 +30,29 @@
 		height: 80%;
 		width: 100%;
 	}
+
+	.float-left{
+		float: left;
+	}
+
+	.float-right{
+		float: right;
+	}
+
+	.clear{
+		clear: both;
+	}
+
+	.pizza-container{
+		width: 100%;
+		border: 1px solid black;
+		text-align: center;
+	}
+
+	.pizza-container .title,.pizza-container .price{
+		width: 20%;
+	}
+
 </style>
 
 </head>
@@ -37,20 +60,22 @@
 		<div class='container-fluid'>
 			<div class='top-navbar row'>
 				<div class='nav-contents'>
-					Hi
 				</div>
 			</div>
 			<div class='contents row'>
 				<div class='col-md-2'></div>	
 				<div class='col-md-8'>
-					<div ng-controller="PizzaController" class='pizza-container'>
+					<div ng-controller="PizzaController" class='main-contents'>
 						<div>
-							<div class="title">{{message}}</div>
+							<!-- <div class="title">{{message}}</div> -->
 							
-							<ul ng-repeat='pizza in PizzaData'>
-								<li>
-									<div>{{ pizza.name }} <div>
-									<div>{{ pizza.prize }}</div>
+							<ul>
+								<li ng-repeat='pizza in PizzaData'>
+									<div class='pizza-container'>
+										<div class="float-left title">{{ pizza.name }} </div>
+										<div class="float-right price">{{ pizza.prize | currency }}</div>
+										<div class="clear"></div>
+									</div>
 			 					</li>
 							</ul>
 						</div>	
