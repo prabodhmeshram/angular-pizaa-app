@@ -53,15 +53,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Pizza App</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-light bg-faded">
+        <div class="nav navbar-nav">
+		    <a class="navbar-brand" href="#">Pizza App</a>
+		    <a class="nav-item nav-link active" href="#">Home </a>
+		    <a class="nav-item nav-link" href="#">Pricing</a>
+		    <a class="nav-item nav-link" href="#">About</a>
+		  </div>
     </nav>
     <div class='container-fluid'>
         <div class='contents row'>
@@ -72,7 +70,7 @@
                         <!-- <div class="title">{{message}}</div> -->
                         <ul>
                             <li ng-repeat='pizza in PizzaData'>
-                                <div class='pizza-container'>
+                                <div class='card pizza-container'>
                                     <div class="float-left title">{{ pizza.name }} </div>
                                     <div class="float-right price">{{ pizza.prize | currency }}</div>
                                     <div class="clear"></div>
