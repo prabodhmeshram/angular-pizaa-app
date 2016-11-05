@@ -68,11 +68,15 @@
                         <!-- <div class="title">{{message}}</div> -->
                         <ul>
                             <li ng-repeat='pizza in PizzaData'>
-                                <div class='card pizza-container'>
-                                    <div class="float-left title">{{ pizza.name }} </div>
-                                    <div class="float-right price">{{ pizza.prize | currency }}</div>
-                                    <div class="clear"></div>
-                                </div>
+                            	<div class="card">
+								  <div class="card-block">
+								    <p class="card-text">{{ pizza.name }}</p>
+								  </div>
+								  <img src="./images/pizza_image.png" alt="Card image">
+								  <div class="card-block">
+								    <p class="card-text">{{ pizza.prize | currency }}</p>
+								  </div>
+								</div>
                             </li>
                         </ul>
                     </div>
